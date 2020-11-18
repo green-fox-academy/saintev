@@ -1,0 +1,54 @@
+body{
+    background-color: #333333;
+    
+}
+
+h2{
+    
+    color: pink;
+    
+}
+
+#Wiki-section h2{
+    color: black;
+    font-size: 25px;
+    font-family: fantasy;
+    
+}
+
+h3{
+    font-family: courier;
+}
+
+#header{
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+        }
+
+a{
+    
+    color: #ff0099;
+}
+
+#box{
+    margin: 1px 5%;
+    width: auto;
+    padding: 5%;
+    border: 1px solid#000;
+    background-image: url(Assets/paisley.png);
+}
+
+#logo{
+    width: 100%;
+    padding: 1px 1px 1px 5%
+}
+#links{
+    width: 50%;
+    display: inline-block;
+    padding: 1px 1px 1px 1000px;
+}
+p{
+    font-size: 50px;
+    margin: auto;
+    text-align: center;
+}
