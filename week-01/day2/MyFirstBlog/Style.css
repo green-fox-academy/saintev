@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+header{
+
+    background-color: gray;
+    padding: 20px;
+    
+}
+
+main{
+    background-color: rgb(67, 104, 67);
+    padding: 20px;
+
+}
+.Frame{
+
+    border-color: black;
+    border-style: solid;
+
+}
+
+.button{
+ 
+    background-color: yellow;
+    border: none;
+    color: gray;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 17px;
+}
