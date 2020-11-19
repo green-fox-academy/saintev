@@ -56,3 +56,13 @@ if((i2*i2 < i1) && (i1 < i2*i2*i2)){
   IsItTrue = false;
 }
 console.log(IsItTrue);
+
+let j: number = 1521;
+let IsItDivisible;
+if((j%3)===0 || (j%5)===0){
+  IsItDivisible = true;
+  console.log('Yes! It is true!');
+}else {
+  IsItDivisible = false;
+  console.log('Sorry, no');
+}
