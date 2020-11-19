@@ -5,5 +5,3 @@ let c: number = 73.3;
 
 console.log('Surface Area: ' + (a+b+c)*2);
 console.log('Volume: ' + (a*b*c));
-
-
