@@ -1,6 +1,14 @@
 'use strict';
+// single line comment
 
-console.log('Humpty Dumpty sat on a wall,');
-console.log('Humpty Dumpty had a great fall.');
-console.log('All the king\'s horses and all the king\'s men');
-console.log('Couldn\'t put Humpty together again.');
+/*
+multi line
+comment block
+*/
+
+//I am welcoming the World
+console.log ('Hello World!');
+
+//Prints and integer to the terminal window
+console.log(42);
+
