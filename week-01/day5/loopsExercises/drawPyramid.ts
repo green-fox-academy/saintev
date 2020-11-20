@@ -2,20 +2,20 @@
 
 let rows: number = 4;
 
-    for (let i = 0; i < rows; i++) { 
+    
+for (let i: number = 0; i < rows; i++) { 
       let starsAndSpaces: any = '';
       
-      for (let j = 0; j < rows - i; j++) {
+      for (let j: number = 0; j < rows - i; j++) {  //hany space legyen
         starsAndSpaces += ' ';
         
-
-        
+      
       } starsAndSpaces += '*';
-      for (let k = 0; k < i; k++) {
+      for (let k: number= 0; k < i; k++) { // hany csillag legyen
         
         starsAndSpaces += '**';
-        }
-      
-      
+      }
+  
         console.log(starsAndSpaces);  
-    } 
+} 
+
