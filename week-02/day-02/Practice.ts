@@ -3,29 +3,35 @@
 let a: string = 'I am a new string';
 console.log('Message from a(2) ' + a.charAt(2));
 
-
+//change string to capital
 let b: string = 'I AM A CAPITAL STRING';  
 console.log('Changed to lowercase' + b.toLowerCase());
 
+//change string to uppercase
 let c: string = 'i am all lowercase now';
 console.log(c.toUpperCase());
 
+//cut from third until hatulrol a masodik
 let sliced: any= a.slice(3, -2);
 console.log(sliced);
 
+//ket stringet osszefuz
 let str: string = 'This is a new string';
 console.log(str.charAt(0));
 console.log(str.charCodeAt(1));
 let str3: string = a.concat(b.toString());
 console.log('a + b = ' + str3);
 
+//hol kezdodik a keresett szo
 let str4: string = 'Here I am the newest string!';
 console.log(str4.indexOf('newest'));
 
+//kicserel egy szot
 let re: any = /newest/gi;
 var newstring: string = str4.replace(re, 'oldest');
 console.log(newstring);
 
+//kiirja a valahanyadik elemet
 let sample: string[]
 sample=['one', 'two', 'three', 'four']
 console.log(sample[1]);

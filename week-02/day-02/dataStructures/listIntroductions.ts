@@ -31,13 +31,11 @@ console.log((newList[2]));
 //Iterate through the list and prinnt out each name
 for (let i: number = 0;  i <=(newList.length); i++){
 console.log(newList[i]);
-
 }
 
 //Iterate through the list and print
 for (let j: number = 0; j <= (newList.length); j++){
 console.log([j+1]+'. ' + newList[j]);
-
 }
 
 //Remove the 2nd element
@@ -50,8 +48,7 @@ console.log(newestList);
 newestList.reverse();
 for (let k: number = 0; k <= newestList.length; k++){
   console.log(newestList[k]);
-  
-}
+  }
 
 //Remove all elements
 newestList = [];
