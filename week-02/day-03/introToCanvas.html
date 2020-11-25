@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+</head>
+<body>
+  <canvas >
+  Sorry, your browser does not support the canvas tag.
+  </canvas>
+  <script>
+  var canvas = document.getElementById('canvas');
+
+  // set canvas size, ettol nem fog eltorzulni a rajz
+  canvas.width = canvas.scrollWidth;
+  canvas.clientHeight = canvas.scrollHeight;
+  
+  //get a reference to the 2d drawing context / api
+  var ctx = canvas.getContext('2d');
+
+//draw rectangle
+  ctx.fillStyle = ' green'; 
+  ctx.fillRect(10,10, 100,100); 
+
+//a szele lesz piros
+  ctx.strokeStyle =  'red';
+  ctx.strokeRect(200, 50, 100, 100); 
+  //x, y az elso ket koordinata a bal felso sarkat jeloli
+
+  //kor
+  cts.fillStyle = 'blue';
+  ctx.beginPath();
+  ctx.arc(400, 100, 50, 0, Math.PI * 2);
+  ctx.fill();
+  // x, y az elso ketto, ez a kozepe
+
+// csak a korvonala
+  cts.strokeStyle = 'purple';
+  ctx.beginPath();
+  ctx.arc(550, 100, 50, 0, Math.PI * 2);
+  ctx.stroke();
+
+  //quarter of a circle
+  cts.fillStyle = 'pink';
+  ctx.beginPath();
+  ctx.arc(700, 100, 50, 0, Math.PI / 2); // ez nem mukodik
+  ctx.lineTo(700, 100); // ezt hozza kell adni hogy a kozepebe mutasson
+  ctx.fill();
+
+//Draw a path which is outlined
+ctx.beginPath();
+ctx.moveTo(100, 100);
+ctx.lineTo(200, 100);
+ctx.moveTo (100, 200);
+ctx.lineTo(50, 100);
+
+ctx.strokeStyle = 'green';
+ctx.stroke();
+
+//Draw a path which is filled not outlined
+cts.beginPath();
+ctx.moveTo(400, 100);
+ctx.lineTo(500, 100);
+ctx.moveTo (400, 200);
+ctx.lineTo(350, 100);
+
+ctx.fillStyle = 'green';
+ctx.fill(); // not filling it
+
+cts.beginPath();
+ctx.moveTo(400, 100);
+ctx.lineTo(500, 100);
+ctx.lineTo (400, 200); // most mukodik
+ctx.lineTo(350, 100);
+
+ctx.fillStyle = 'green';
+ctx.fill();
+
+    </script>
+</body>
+</html>
