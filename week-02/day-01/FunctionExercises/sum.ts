@@ -1,8 +1,10 @@
 'use strict';
 
+
+// Write a function called `sum` that returns the sum of numbers from zero to the given parameter
+
 let number: number = 7;
 
-summarize(number);
 function summarize(number: number): number {
   console.log('the number until we are adding is ' + number);
   let sum: number = 0;
@@ -13,3 +15,4 @@ function summarize(number: number): number {
   console.log(sum);
   return sum;
 }
+summarize(number);

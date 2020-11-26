@@ -1,8 +1,10 @@
 'use strict';
 
-let number: number = 7;
 
-factorio(number);
+// -  Create a function called `factorio` that returns it's input's factorial
+
+let inputNumber: number = 7;
+
 function factorio(number: number): number {
   console.log('We are calculating the factorial of ' + number);
   let factorial: number = 1;
@@ -10,9 +12,9 @@ function factorio(number: number): number {
     factorial = factorial * i;
     }
 
-
-  console.log(factorial);
+   console.log(factorial);
   return factorial;
 
 }
 
+factorio(inputNumber);
