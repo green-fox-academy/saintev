@@ -33,7 +33,4 @@ function drawSquare(x) {
 }
 drawSquare(10, 10);
 
-ctx.strokeStyle =  'red';
-ctx.strokeRect(200, 50, 100, 100); 
-ctx.fillStyle = 'green';
-ctx.fillRect(200, 50, 100, 100); 
+ 
