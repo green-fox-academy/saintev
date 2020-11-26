@@ -1,15 +1,14 @@
-'use strict';
+'use strict'
+// - Create an array variable named `drinks` with the following content:
+//   `['Gin', 'Whiskey', 'Wine', 'Beer']`
+// - Double all the strings in the array, use a built in array method instead of
+//   a loop
+// - It should print: ['GinGin', 'WhiskeyWhiskey', 'WineWine', 'BeerBeer']`
 
 let drinks: string[] = ['Gin', 'Whiskey', 'Wine', 'Beer'];
-let newListOfDrinks: string[];
 
-for (let i: number = 0; i < drinks.length; i++) {
-newListOfDrinks = newListOfDrinks.push ([drinks[i] + drinks[i]]); 
-  
-}
-  console.log(newListOfDrinks);
-
-let newFruits = fruits.map(function (elem) {
-  return elem;
-})
-console.log(newFruits);
+let doubleDrinks: string[] = drinks.map(function (alcoholtype) {
+  alcoholtype = alcoholtype + alcoholtype;
+  return alcoholtype;
+});
+console.log(doubleDrinks);
