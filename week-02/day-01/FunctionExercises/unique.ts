@@ -10,7 +10,7 @@ let removedNumbers: number[];
 for (let i: number = 0; i < listOfNumbers.length - 1; i++) {
   for (let j: number = i + 1; j < listOfNumbers.length; j++) {
     while (listOfNumbers[i] === listOfNumbers[j]) {
-      removedNumbers = listOfNumbers.splice(j, 1);
+      removedNumbers = listOfNumbers.splice(j, 1); // a j.helytol kezdve egy elemet elvesz
       }
   }
 }

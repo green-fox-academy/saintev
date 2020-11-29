@@ -4,7 +4,7 @@
 const canvas = document.querySelector('.main-canvas');
 const ctx = canvas.getContext('2d');
 
-let howManyparts = 16;
+let howManyparts = 64;
 let divide = Math.sqrt(howManyparts);
 let x;
 let y;
