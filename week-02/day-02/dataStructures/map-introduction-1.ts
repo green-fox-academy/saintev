@@ -39,6 +39,9 @@ console.log(key);
 Object.keys(map).forEach(key => {
   console.log(map[key])
 });
+Object.keys(map).forEach(function (kulcsok) {
+  console.log(map[kulcsok]);
+});
 
 //Add value D with the key 68
 map[68] = 'D';
@@ -54,12 +57,18 @@ for (let key in map) {
 console.log(count);
 
 //Print the value that is associated with key 99
-console.log(map.99);
+console.log(map[99]);
  
 //Remove the key-value pair where with key 97
-delete map.97;
-
+delete map[97];
+for (let key in map) {
+console.log(key);
+}
 
 //Print whether there is an associated value with key 100 or not
+console.log(map.hasOwnProperty(100)); //returns false
 
 //Remove all the key-value pairs
+for (let key in map) {
+  delete map[key];
+}
