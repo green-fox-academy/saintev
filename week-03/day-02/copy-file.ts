@@ -16,8 +16,10 @@ copyFile('my-secondfile.txt');
 }
 catch(e) {
 console.log();
-  if (e !== 0) {
     successInfo = false;
+  console.log('Copy was unsuccessful :('); 
   }
- }
-  console.log(successInfo);
+
+if(successInfo === true) {
+console.log('Success!');
+}
