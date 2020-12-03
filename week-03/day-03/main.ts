@@ -25,11 +25,11 @@ let wildPokemon: Pokemon = new Pokemon('Oddish', 'leaf', 'water');
 // Implement the following `chooseEffective` function which will choose the most effective pokemon for Ash
 
 
-//for (let i: number = 0; i < pokemonOfAsh.length; i++){
-//  if (pokemonOfAsh[i].isEffectiveAgainst(wildPokemon)) {
-//  console.log(`I choose you!, ` + pokemonOfAsh[i]._name);
-//  }
-//}
+for (let i: number = 0; i < pokemonOfAsh.length; i++){
+  if (pokemonOfAsh[i].isEffectiveAgainst(wildPokemon)) {
+  console.log(`I choose you!, ` + pokemonOfAsh[i]._name);
+  }
+}
 
 // vagy a fuggvennyel:
 

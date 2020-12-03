@@ -9,11 +9,11 @@
 //Create a Counter class
 //which has an integer property
 export class Counter{
-  _integer: number;
+  private _integer: number;
 
 //when creating an instance, it should have a default value 0 or we can specify it when creating
-  constructor(integer: number) {
-    this._integer = 0;
+  constructor(integer?: number) {
+    this._integer = integer ?? 0;
   }
 //we can add(number) to increase the counter's value by a whole number
   public addNumber(number): number{
@@ -22,16 +22,17 @@ export class Counter{
   }
 
 //or we can add() without parameters just increasing the counter's value by one
-  public add(): number{
+  public add(number?: number): number{
+    this._integer += number ??
     this._integer++;
     return this._integer;
   }
 
 //and we can get() the current value as string
-  public get integer(): number{
-    this._integer.toString;
+  public get(): number {
     return this._integer;
   }
+  
 //also we can reset() the value to the initial value
   public reset(): number {
     this._integer = 0;
