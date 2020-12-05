@@ -1,26 +1,29 @@
-'use strict';
-
-function fibonacciNumber(n: number) {
-let fibonacci: number[] = [0, 1];
-
-  for (let i: number = 2; i <= n; i++){
-fibonacci.push(fibonacci[i-1]+fibonacci[i-2])
- // return fibonacciNumber[n];
-  }
-  
-  console.log(fibonacci[n]);
-  
-}
-fibonacciNumber(9);
-
+//'use strict';
 //
 //function fibonacciNumber(n: number) {
 //let fibonacci: number[] = [0, 1];
-//  if (n  === fibonacci.length) {
-//    return;
-//  } else {
-//    fibonacci.push(fibonacci[n - 1] + fibonacci[n - 2]);
-//    return fibonacci[n];
+//
+//  for (let i: number = 2; i <= n; i++){
+//fibonacci.push(fibonacci[i-1]+fibonacci[i-2])
+// // return fibonacciNumber[n];
 //  }
+//  
+//  console.log(fibonacci[n]);
+//  
 //}
-//console.log(fibonacciNumber(9));
+//fibonacciNumber(9);
+
+
+function fibonacciNumber(n: number) {
+  if (n === 2) {
+    return 1;
+  } else if (n === 1) {
+    return 1;
+  } else {
+    return fibonacciNumber(n - 1) + fibonacciNumber(n - 2);
+  }
+}
+console.log(fibonacciNumber(10));
+
+
+
