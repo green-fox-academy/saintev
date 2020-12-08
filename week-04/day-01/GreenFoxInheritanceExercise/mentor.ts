@@ -8,9 +8,6 @@ export class Mentor extends Person{
 
   constructor(name?: string, age?: number, gender?: string, level?: string) {
     super(name, age, gender);
-    this._name = name ?? 'Jane Doe';
-    this._age = age ?? 30;
-    this._gender = gender ?? 'female';
     this._level = level ?? 'intermediate';
   }
 

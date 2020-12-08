@@ -10,9 +10,6 @@ export class Sponsor extends Person{
   constructor(name?: string, age?: number, gender?: string, company?: string) {
     super(name, age, gender);
     this._hiredStudents = 0;
-    this._name = name ?? 'Jane Doe';
-    this._age = age ?? 30;
-    this._gender = gender ?? 'female';
     this._company = company ?? 'Google';
   }
 

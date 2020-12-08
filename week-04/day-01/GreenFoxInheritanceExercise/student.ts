@@ -8,9 +8,6 @@ export class Student extends Person{
 
   constructor(name?: string, age?: number, gender?: string, previousOrganization?: string) {
     super(name, age, gender);
-    this._name = name ?? 'Jane Doe';
-    this._age = age ?? 30;
-    this._gender = gender ?? 'female';
     this._previousOrganization = previousOrganization ?? 'The School of Life';
     this._skippedDays = 0;
 
