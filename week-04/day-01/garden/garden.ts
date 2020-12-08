@@ -1,50 +1,31 @@
 'use strict';
 
-import { Flower } from './flower';
-import { Tree } from './tree';
+import { Plant } from './plant';
 
-export class Garden {
-  protected _flowers: Flower[];
-  protected _trees: Tree[];
+export class Garden{
+  protected _plants: Plant[] = [];
 
-  constructor() {
-    this._flowers = [];
-    this._trees = [];
+  public addPlant(plant: Plant): void{
+    this._plants.push(plant);
   }
 
-  public addFlower(flower: Flower): void {
-    this._flowers.push(flower);
-  }
+  public get plants(): Plant[]{
+  return this._plants}
 
-  public addTree(tree: Tree): void{
-    this._trees.push(tree);
+
+  public waterAll(amountAtDisposal: number): void{
+    let thirstyPlants: Plant[] = this._plants.filter(plant => plant.needsWater() === true);
+    let totalWaterForEachPlant: number = amountAtDisposal / thirstyPlants.length;
+
+    console.log(`\nWatering with ${amountAtDisposal}`);
+
+    thirstyPlants.forEach((plant: Plant) => plant.water(totalWaterForEachPlant));
+    //for (let i: number = 0; i < thirstyPlants.length; i++){
+    //thirstyPlants[i].water(totalWaterForEachPlant);
+  }
+  public printAll(): void{
+    this._plants.forEach((plant: Plant) => plant.askForWater());
+  }
     
-  }
-
-  public countThirstyPlants(): number{
-  let counter: number = 0;
-  for (let i: number = 0; i < this._trees.length; i++)
-    if (this._trees[2]) {
-      counter++;
-    }
-  return counter;
-  }
 }
 
-let myGarden = [];
-
-let yellowFlower = new Flower('yellow');
-myGarden.push(yellowFlower);
-let blueFlower = new Flower('blue');
-myGarden.push(blueFlower);
-let purpleTree = new Tree('purple');
-myGarden.push(purpleTree);
-let orangeTree = new Tree('orange');
-myGarden.push(orangeTree);
-
-for (let plants of myGarden) {
-  plants.askForWater();
-  console.log(plants.water(100));
-  plants.askForWater();
-  console.log(plants.countThirstyPlants());
-}
