@@ -15,4 +15,5 @@ let newNumbers: number[] = numbers.map(function (num, index) { // a num ami az e
   return num
 
 });
-console.log(newNumbers);
+console.log(newNumbers[3]);
+newNumbers.forEach(x => console.log(x));

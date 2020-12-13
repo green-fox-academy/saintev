@@ -5,10 +5,9 @@
 //   a loop
 // - It should print: ['GinGin', 'WhiskeyWhiskey', 'WineWine', 'BeerBeer']`
 
+'use strict';
+
 let drinks: string[] = ['Gin', 'Whiskey', 'Wine', 'Beer'];
 
-let doubleDrinks: string[] = drinks.map(function (alcoholtype) {
-  alcoholtype = alcoholtype + alcoholtype;
-  return alcoholtype;
-});
-console.log(doubleDrinks);
+let doubleDrinks: string[] = drinks.map(x => x + x);
+doubleDrinks.forEach(x => console.log(x));

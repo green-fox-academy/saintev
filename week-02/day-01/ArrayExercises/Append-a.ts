@@ -1,19 +1,19 @@
 'use strict';
 
-'use strict'
+let animals: string[] = ["koal", "pand", "zebr", "anacond", "bo", "chinchill", "cobr", "gorill", "hyen", "hydr", "iguan", "impal", "pum", "tarantul", "pirahn"];
 
-// -  Create an array variable named `animals`
-//    with the following content: `["koal", "pand", "zebr"]`
-// -  Add all elements an `"a"` at the end
+// 1.
+//let newAnimals: string[] = animals.map(function (x) {
+//  x = x + `a`;
+//  return x;
+//});
+//  newAnimals.forEach(x => console.log(x));
 
-let animals: string[] = ['koal', 'pand', 'zebr'];
-let correctedAnimals: string[] = animals.map(function (elem) {
-  elem = elem + 'a';
-  return elem;
-}
-);
-console.log(correctedAnimals);
+// 2.
+//let newAnimals: string[] = animals.map(x => { return x + `a` });
+//newAnimals.forEach(x => console.log(x));
 
-//for (let i: number = 0; i < animals.length; i++) {
-//  console.log(animals[i] + 'a')
-//};
+  
+// 3.
+let newAnimals: string[] = animals.map(x => x + `a`);
+newAnimals.forEach(x=>console.log(x));
