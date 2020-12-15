@@ -59,7 +59,7 @@ map2["978-1-60309-453-5"] = `Why Did We Trust Him?`
 console.log(map2);
 
 //Print whether there is an associated value with key 478-0-61159-424-8 or not
-console.log("478-0-61159-424-8" in map2);
+console.log(map2.hasOwnProperty('478-0-61159-424-8'));
 
 //Print the value associated with key 978-1-60309-453-5
 console.log(map2["978-1-60309-453-5"]);
