@@ -29,15 +29,18 @@ console.log(newList.length);
 console.log((newList[2]));
 
 //Iterate through the list and print out each name
-for (let i: number = 0;  i <(newList.length); i++){
+for (let i: number = 0;  i <newList.length; i++){
   console.log(newList[i]);
   
 } // or
 
 newList.forEach(function (names) {
   console.log(names);
-  
 })
+
+  //or
+newList.forEach(x => console.log(x));
+  
 
 //Iterate through the list and print
 for (let j: number = 0; j < (newList.length); j++){
@@ -54,7 +57,7 @@ console.log(newestList);
 newestList.reverse();
 for (let k: number = 0; k < newestList.length; k++){
   console.log(newestList[k]);
-  }
+}
 
 //Remove all elements
 newestList = [];

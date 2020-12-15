@@ -12,28 +12,33 @@ console.log(expenses);
 //Which was our cheapest spending?
 //What was the average amount of our spendings?
 
-let application = {
+function application (listOfExpenses: number[]): void {
 
-  "amount spent": expenses.reduce(function (accumulator, currentvalue) {
+  let application = {
+  
+  "amount spent": listOfExpenses.reduce(function (accumulator, currentvalue) {
     return accumulator + currentvalue  }, 0),
     
-  "greatest expense": expenses.reduce(function (accumulator, currentvalue) {
+  "greatest expense": listOfExpenses.reduce(function (accumulator, currentvalue) {
     return Math.max(accumulator, currentvalue)
   }, 0),
   
-  "cheapest spending": expenses.reduce(function (accumulator, currenvalue) {
-    return Math.min(accumulator, currenvalue)
+  "cheapest spending": listOfExpenses.reduce(function (accumulator, currentvalue) {
+    return Math.min(accumulator, currentvalue)
   }, 0),
   
-  "average spend": expenses.reduce(function (accumulator, currentvalue) {
+  "average spend": listOfExpenses.reduce(function (accumulator, currentvalue) {
     return (accumulator + currentvalue)  }, 0)/expenses.length
   
-}
-console.log(application);
-for (let keys in application) {
-console.log(keys);
-}
-Object.keys(application).forEach(function (keys) {
-console.log(application[keys]);
+  }
+  
+  Object.keys(application).forEach(key => {
+    console.log(`${key} : ` + application[key]);
+  });
+    
+  }  
 
-})
+application(expenses);
+
+
+

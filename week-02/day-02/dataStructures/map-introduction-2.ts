@@ -44,8 +44,11 @@ Object.keys(map2).forEach(function (keys) {
 
 
 //Remove the key-value pair with value The Lab
-
-
+Object.keys(map2).forEach(function (element) {
+  if (map2[element] === `The Lab`) {
+    delete map2[element];
+  }
+});
 
 //Add the following key-value pairs to the map
 //Key	Value
