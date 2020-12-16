@@ -12,5 +12,6 @@ export class F16 extends Aircraft {
     this._maxAmmo = 8;
     this._isPriority = false;
   }
-  
+
+ 
 }

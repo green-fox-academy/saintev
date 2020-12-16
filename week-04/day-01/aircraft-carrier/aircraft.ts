@@ -14,6 +14,10 @@ export abstract class Aircraft {
     this._allDamage = 0;
   }
 
+  public getPriority(): boolean {
+    return this._isPriority;
+  }
+
   public refill(amount: number): number {
     if (amount < (this._maxAmmo - this._ammo)) {
       this._ammo += amount;
@@ -28,6 +32,10 @@ export abstract class Aircraft {
   public fight(): number {
     this._allDamage += this._baseDamage * this._ammo;
     this._ammo = 0;
+    return this._allDamage;
+  }
+
+  public getAllDamage(): number {
     return this._allDamage;
   }
 
