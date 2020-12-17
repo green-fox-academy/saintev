@@ -29,6 +29,6 @@ export class Ship {
       }
     }
   }
-
+// Hogy lehetne a hasCaptaint atallitani ha die() vagy brawl() kozben meghal a captain?
   
 }
