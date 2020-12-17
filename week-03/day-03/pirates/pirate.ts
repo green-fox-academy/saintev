@@ -1,19 +1,28 @@
 'use strict';
 
+import { Ship } from './ship';
+
 export class Pirate {
   
   protected _intoxicationLevel: number;
   protected _drinksHad: number;
   public _isAlive: boolean;
   public _isConscious: boolean;
+  protected _isCaptain: boolean;
+  protected _isPartOfACrew: boolean;
 
-  constructor() {
+  constructor(isCaptain?:boolean) {
     this._intoxicationLevel = 0;
     this._drinksHad = 0;
     this._isAlive = true;
     this._isConscious = true;
+    this._isCaptain = isCaptain ?? false
+    this._isPartOfACrew = false;
   }
 
+  public isCaptain(): boolean{
+    return this._isCaptain;
+  }
   public getIntoxicationLevel(): number {
     return this._intoxicationLevel;
   }
@@ -31,6 +40,10 @@ export class Pirate {
     this._isConscious = false;
   }
 
+  public isAlive(): boolean {
+    return this._isAlive;
+  }
+  
   public howIsGoingMate(): void {
     if (this._isAlive) {
       if (this._drinksHad <= 4) {
