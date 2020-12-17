@@ -7,7 +7,7 @@ export class Carrier {
   protected _aircrafts: Aircraft[] = [];
   protected _carrierAmmo: number;
   public _healthPoint: number;
-  public _totalDamage: number;
+  public _totalDamage: number = 0;
 
   constructor(initialAmmo: number, healthPoint: number) {
     this._carrierAmmo = initialAmmo;
@@ -43,7 +43,7 @@ export class Carrier {
     carrier._healthPoint = 0;
     }
   }
-  // this is not working properly
+  
   public getTotalDamage(): number {
     for (let i: number = 0; i < this._aircrafts.length; i++) {
     this._totalDamage += this._aircrafts[i].getAllDamage();
@@ -51,12 +51,13 @@ export class Carrier {
     return this._totalDamage;
   }
 
-  //this is not finished. HP also not working
   public getStatus(): void {
     console.log(`HP: ${this._healthPoint}, Aircraft count: ${this._aircrafts.length}, Ammo storage: ${this._carrierAmmo}, Total damage: ${this._totalDamage}`);
-    if (this._healthPoint = 0) {
+    
+    this._aircrafts.forEach(x => console.log(`Type : ${x.getType()}, Ammo : ${x.getAmmo()}, Base Damage : ${x.getBaseDamage()}, All Damage : ${x.getAllDamage()}`));
+    
+    if (this._healthPoint === 0) {
       console.log(`It's dead Jim :(`);
     }
-    console.log(this._aircrafts);
   }  
 }

@@ -53,4 +53,12 @@ export abstract class Aircraft {
       return this._isPriority;
     }
   }
+
+  public getAmmo(): number {
+    return this._ammo;
+  }
+
+  public getBaseDamage(): number {
+    return this._baseDamage;
+  }
 }

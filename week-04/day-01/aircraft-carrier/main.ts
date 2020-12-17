@@ -24,14 +24,24 @@ myCarrier.add(myOtherPlane);
 myCarrier2.add(myPlane3);
 myCarrier2.add(myPlane4);
 
+console.log(myPlane.refill(300));
+console.log(myOtherPlane.refill(300));
+
+console.log(myPlane.fight());
+console.log(myPlane.getAllDamage());
+console.log(myOtherPlane.fight());
+console.log(myOtherPlane.getAllDamage());
+
 //console.log(myCarrier.fill());
 myCarrier.fight(myCarrier2);
-//console.log(myCarrier._healthPoint);
-//console.log(myCarrier2._healthPoint);
+console.log(myCarrier._healthPoint);
+console.log(myCarrier2._healthPoint);
 //myCarrier.getStatus();
 //myCarrier2.getStatus();
-myCarrier2.getTotalDamage();
-myCarrier.getTotalDamage();
+//myCarrier2.getTotalDamage();
+console.log(myCarrier.getTotalDamage());
+myCarrier.getStatus();
+myCarrier2.getStatus();
 
 
 
