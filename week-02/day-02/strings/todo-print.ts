@@ -10,10 +10,13 @@
 //  - Download games
 //      - Diablo
 
-let todoText: string = 
-`My todo:
-  - Buy milk
-  - Download games
-    -Diablo`
+let todoText: string = ' - Buy milk\n';
+let todoText2: string = ' - Download games\n  - Diablo'
+todoText2 = todoText.concat(todoText2);
+console.log(todoText2);
 
-console.log(todoText);
+//vagy
+let todoText3: string = ` - Download games
+    Diablo`;
+todoText3 = todoText.concat(todoText3);
+console.log(todoText3);

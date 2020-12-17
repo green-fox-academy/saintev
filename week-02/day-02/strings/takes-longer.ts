@@ -12,3 +12,8 @@ console.log(quote.indexOf('you'));
 quote = quote.slice(0, x - 1) + ' always takes longer than ' + quote.slice(x);
 
 console.log(quote);
+
+//vagy
+quote = [quote.slice(0, quote.indexOf('It')+2), ' always takes longer than', (quote.slice(quote.indexOf('It')+2))].join('');
+
+console.log(quote);

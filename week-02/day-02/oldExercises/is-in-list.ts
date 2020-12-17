@@ -7,7 +7,7 @@
 let listOfNumbers: number[] = [2, 4, 6, 8, 10, 12, 14, 16];
 
 function checkNums(numbers) {
-  if ((numbers.indexOf(2&&4&&6&&8&&10&&12&&14&&16)) === -1){
+  if ((numbers.indexOf(4 && 8 && 12 && 16)) === -1){
   console.log('false');
   } else {
   console.log('true');
@@ -15,3 +15,5 @@ function checkNums(numbers) {
 }
 
 checkNums(listOfNumbers);
+
+listOfNumbers.includes(4 && 8 && 12 && 16);

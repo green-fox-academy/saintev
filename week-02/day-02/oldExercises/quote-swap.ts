@@ -16,4 +16,15 @@ quoteSwap(words);
 
 // Expected output: "What I cannot create I do not understand."
 
+let words2: string[] = ['What', 'I', 'do', 'create,', 'I', 'cannot', 'not', 'understand.'];
+function swap(quote: string []) {
+  let x: number = words2.indexOf('cannot');
+  quote.splice(x, 1, 'do');
+  let y: number = words2.indexOf('do');
+  quote.splice(y, 1, 'cannot');
+  console.log(quote);
+  
+}
+swap(words2);
+
 

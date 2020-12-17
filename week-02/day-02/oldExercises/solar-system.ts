@@ -9,13 +9,13 @@ let planetList: string[] = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Ura
 
 
 function putSaturn(list): string{
-  list.splice(5, 'Saturn');  // inserts and element before index 5 ('Uranus't is lehet irni az 5 helyere)
+  let fixedPlanetList = list.splice(5, 0,'Saturn');  // inserts and element before index 5 ('Uranus't is lehet irni az 5 helyere)
 console.log(list);
 
-  return list;  
+  return fixedPlanetList;  
 }
 
 putSaturn(planetList);
-export = putSaturn;
+
 
 

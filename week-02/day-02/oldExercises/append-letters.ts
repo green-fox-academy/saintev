@@ -5,12 +5,10 @@
 
 let far: string[] = ['bo', 'anacond', 'koal', 'pand', 'zebr'];
 
-function appendA(animals:string [] ) {
-animals.forEach(function (letters) {
-  let corrected: string [] = [(letters + 'a')];
-console.log(corrected);
-});
-}
 
-console.log(appendA(far));
+let appendedAnimals = far.map(x => {
+  return (x + 'a');
+});
+console.log(appendedAnimals);
+
 

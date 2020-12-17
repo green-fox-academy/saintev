@@ -31,6 +31,11 @@ let alicesList = {
 }
 
 //How much does Bob pay?
+let bobTotal: number = 0;
+Object.keys(bobsList).forEach((key) => {
+  bobTotal += (bobsList[key])  
+}); /// ezt meg a product arakkal be kell szorozni
+
 
   
 //How much does Alice pay ?
