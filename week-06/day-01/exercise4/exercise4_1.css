@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto; 
+  border: 3px solid red ;
+  height: 500px;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+  display: block;
+  padding: 10px;
+  background-color: rgb(21, 195, 226);
+}
+
+.links {
+  display: flex;
+  background-color: rgb(155, 33, 185);
+  justify-content: flex-start;
+}
+
+p {
+  align-self: flex-start;
+  padding: 10px;
+}
+
+.content {
+  display: flex;
+  align-items: stretch;
+  height: 500px;
+}
+
+.main {
+  flex-grow: 2;
+  background-color: #ffd000;
+  align-self: auto;
+  height: m;
+  
+}
+
+.sidebar {
+  flex-grow: 1;
+  background-color: #0fe90f;
+
+}
