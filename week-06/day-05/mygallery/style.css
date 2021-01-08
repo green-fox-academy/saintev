@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+  }
+.wrapper {
+  width: 80%;
+  margin: 0 auto; 
+  background-image: linear-gradient(to right, rgb(138,138,138), rgb(200, 200, 200), rgb(138,138,138));
+}
+
+#title {
+  position: relative;
+}
+
+#title h1{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 15px;
+  font-family: 'Playfair Display', serif;
+  color: rgb(100,100,100);
+}
+
+.flex-container{
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture-container{
+  display: flex;
+  width: 464px; 
+  height: 261px;
+  --border: 3px solid red;
+}-->
+
+.picture {
+  overflow: hidden;
+}
+
+.right {
+  transform: rotateY(180deg);
+  order: 1;
+}
+
+.button {
+  display: flex;
+  background-color: white;
+  height: 261px;
+  align-self: center;
+}
