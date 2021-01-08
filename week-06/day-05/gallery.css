@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+.wrapper {
+  display: flex;
+  width: 80%;
+  margin: 0 auto; 
+  background-image: linear-gradient(to right, rgb(138,138,138), rgb(200, 200, 200), rgb(138,138,138));
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture {
+  max-width: 50%;
+}
+
+.right {
+  transform: rotateY(180deg);
+  order: 1;
+}
