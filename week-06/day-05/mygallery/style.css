@@ -42,12 +42,12 @@
 
 .right {
   transform: rotateY(180deg);
-  order: 1;
 }
 
-.button {
-  display: flex;
+button {
   background-color: white;
   height: 261px;
   align-self: center;
+  width: 50px;
+  border: none;
 }
