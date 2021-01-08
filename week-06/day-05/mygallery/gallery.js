@@ -1,8 +1,6 @@
 'use strict';
 
 const button = document.querySelector( 'button' );
-const counter = document.querySelector( '.counter' );
-
 
 let images = [
   './images/jellyfish.jpg',
