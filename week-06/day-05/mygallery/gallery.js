@@ -12,6 +12,7 @@ let images = [
   './images/piglets.jpg',
   './images/orca.jpg',
   './images/bird.jpg',
+  './images/sheep.jpg',
 
 ]
 
@@ -55,5 +56,13 @@ rightButton.onclick = () => {
   i++;
   if ( i >= images.length ) {
   i = 0}
+  imgUrl.setAttribute( 'src', images[ i ] );
+}
+
+let j = 0;
+leftButton.onclick = () => {
+  i--;
+  if ( i < 0 ) {
+    i = images.length-1;}
   imgUrl.setAttribute( 'src', images[ i ] );
 }
