@@ -67,6 +67,7 @@ let i = 0;
 // it should start from the current image not 0. order is messed up if clicked on thumbnails.
 //let i = images.indexOf(imgUrl);
 rightButton.onclick = () => {
+  ///let i = images.indexOf( imgUrl.querySelector('src'));
   i++;
   if ( i >= images.length ) {
   i = 0}
