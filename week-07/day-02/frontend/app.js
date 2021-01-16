@@ -39,7 +39,7 @@ app.get( '/appenda/:word', ( req, res ) => {
   res.json( { "appended": `${ req.params.word }a` } );
   } );
 
-app.post( '/dountil/sum/:action', ( req, res ) => { //ez az egesz nem mukodik 
+app.post( '/dountil/:action', ( req, res ) => { //ez az egesz nem mukodik //ez miert post a tobbi meg get?
   let action = req.params.action;
   let number = req.body.until;
 
@@ -51,9 +51,8 @@ app.post( '/dountil/sum/:action', ( req, res ) => { //ez az egesz nem mukodik
     for ( let i = 1; i <= number; i++ ) {
       sum += i;
     }
-    res.send( { //a sendet is atalakitja az express .json-ne ha object
-      "until": sum
-    } );
+    res.send( {//a sendet is atalakitja az express .json-ne ha object
+      "until": sum} );
 
   } else if ( action === 'factor' ) {
     let factor = 1;
@@ -65,8 +64,6 @@ app.post( '/dountil/sum/:action', ( req, res ) => { //ez az egesz nem mukodik
     } )
   }
 } );
-
-
 
 app.listen( PORT, () => {
     console.log( `The server is running on port ${ PORT }` );
