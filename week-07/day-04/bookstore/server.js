@@ -58,19 +58,18 @@ app.get( '/allbookinfo', ( req, res ) => {
   let plt = 2000;
   if ( req.query.plt ) {
     plt = req.query.plt;
-    mainQuery += `WHERE book_price < 2000;`
-    
+    mainQuery += `WHERE book_price < (?);`
+    searchWords.push(plt)
   }
     
   let pgt = 0;
   if ( req.query.pgt ) {
-  pgt = req.query.pgt;
+    pgt = req.query.pgt;
+    mainQuery += `WHERE book_price > (?);`
+    searchWords.push( pgt );
   }
    
- //& book_price < (?)
- //& book_price > (?);
-
-  conn.query( mainQuery , searchWords , ( err, rows ) => { 
+   conn.query( mainQuery , searchWords , ( err, rows ) => { 
     if ( err ) {
       console.log( err.toString() );
       res.status( 500 ).json( { 'error': 'database error' } );
