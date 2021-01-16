@@ -12,4 +12,7 @@ if ( paragraph[ 0 ].classList.contains( 'apple' ) ) {
   paragraph[ 2 ].innerText = 'dog';
 }
 //Make apple red by adding a .red class
+paragraph[ 0 ].classList.add( 'red' );
+
 //Make balloon less balloon-like (change its shape)
+paragraph[ 1 ].style.borderRadius = '10%';

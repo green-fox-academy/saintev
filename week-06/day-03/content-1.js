@@ -6,10 +6,6 @@ console.log( document );
 //Append every paragraph with the last one's content.
 let paragraph = document.querySelectorAll( 'p' );
 
-//console.log( paragraph[0] );
-//paragraph[ 1 ].innerText = paragraph[ 0 ].innerText;
-//paragraph[ 2 ].innerText = paragraph[ 0 ].innerText + paragraph[1].innerText;
-
 for ( let i = 1; i < paragraph.length; i++ ) {
   paragraph[ i ].innerText = paragraph[ i - 1 ].innerText + ' ' + paragraph[i].innerText; 
 }

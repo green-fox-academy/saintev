@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: CreateElement</title>
+</head>
+
+<body>
+  <main></main>
+
+  
+    <script>
+      const kids = [
+        { 'petName': 'Wattled crane',
+         'owner': 'Bryant' },
+        { 'petName': 'Devil, tasmanian', 'owner': 'Alejandro' },
+        { 'petName': 'Mynah, common', 'owner': 'Nelie' },
+        { 'petName': 'Dolphin, common', 'owner': 'Mariele' },
+        { 'petName': 'Gray duiker', 'owner': 'Maddalena' },
+        { 'petName': 'Crab (unidentified)', 'owner': 'Lucine' },
+        { 'petName': 'Ant (unidentified)', 'owner': 'Lorianna' },
+        { 'petName': 'Bison, american', 'owner': 'Tommie' },
+        { 'petName': 'Yellow mongoose', 'owner': 'Vivyan' },
+        { 'petName': 'Carpet snake', 'owner': 'Veda' },
+        { 'petName': 'Lesser mouse lemur', 'owner': 'Isidor' },
+      ];
+      //1) Create an <article> element for each kid
+      for (let i = 0; i < kids.length; i++) {
+        let newArticle = document.createElement('article');
+        console.log(newArticle);
+      }
+
+      //2) Create a <h3> and a <p> element for each article and append them as a child to the <article>
+      //    - The H3 should contain the owner's name
+      //    - The p should contain the pet's name
+      const articles = document.querySelectorAll('article');
+      for (let i = 0; i < articles.length; i++) {
+        const kidsName = article[i].createElement('h3');
+        const petName = article[i].createElement('p');
+        kidsName.innerText = kids[i]['owner'];
+        petName.innerText = kids[i].petName;
+        article[i].appendChild(kidsName);
+        article[i].appendChild(petName);
+        console.log(allArticles[i].kidsName); // nem mukodik
+      }
+
+      //3) Add the article to the pets main.
+    </script>
+    
+</body>
+
+</html>

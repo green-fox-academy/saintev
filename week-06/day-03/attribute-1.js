@@ -14,8 +14,9 @@ website.setAttribute( 'href', 'https://www.greenfoxacademy.com/' );
 
 //Disable the second button.
 const secondButton = document.querySelector( '.this-one' );
+secondButton.setAttribute ('disabled', true);
+
 //secondButton.remove();
-secondButton.disable = true;
 
 //Replace its text with 'Don't click me!'
 secondButton.innerText = `Don't click me!`;
