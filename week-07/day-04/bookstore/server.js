@@ -39,7 +39,7 @@ app.get( '/allbookinfo', ( req, res ) => {
  JOIN category ON book_mast.cate_id = category.cate_id
  JOIN publisher ON book_mast.pub_id = publisher.pub_id`
   let searchWords = [];
-
+  
   let bookCategory = ' '
   if ( req.query.category ) {
     bookCategory = req.query.category;
@@ -51,21 +51,33 @@ app.get( '/allbookinfo', ( req, res ) => {
   let bookPublisher = ' '; 
   if ( req.query.publisher ) {
     bookPublisher = req.query.publisher;
-    mainQuery += ` AND pub_name = (?);`
+    if ( req.query.category && req.query.publisher ) {
+    mainQuery += ` AND pub_name = (?)`
+    } else {
+    mainQuery += ` WHERE pub_name = (?)`
+    }
     searchWords.push( bookPublisher );
   }
   
   let plt = 2000;
   if ( req.query.plt ) {
     plt = req.query.plt;
-    mainQuery += `WHERE book_price < (?);`
+    if ( req.query.category || req.query.publisher ) {
+    mainQuery += ` AND book_price < (?)`
+    } else {
+    mainQuery += ` WHERE book_price < (?)`
+    }
     searchWords.push(plt)
   }
     
   let pgt = 0;
   if ( req.query.pgt ) {
     pgt = req.query.pgt;
-    mainQuery += `WHERE book_price > (?);`
+    if ( req.query.category || req.query.publisher || req.query.pgt ) {
+    mainQuery += ` AND book_price > (?)` // this will change to database error if publisher is added on top of category
+    } else {
+    mainQuery += ` WHERE book_price > (?)`
+    }
     searchWords.push( pgt );
   }
    
