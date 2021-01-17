@@ -39,7 +39,7 @@ app.get( '/appenda/:word', ( req, res ) => {
   res.json( { "appended": `${ req.params.word }a` } );
   } );
 
-app.post( '/dountil/:action', ( req, res ) => { //ez az egesz nem mukodik //ez miert post a tobbi meg get?
+app.post( '/dountil/:action', ( req, res ) => { //ez az egesz nem mukodik 
   let action = req.params.action;
   let number = req.body.until;
 
@@ -52,7 +52,7 @@ app.post( '/dountil/:action', ( req, res ) => { //ez az egesz nem mukodik //ez m
       sum += i;
     }
     res.send( {//a sendet is atalakitja az express .json-ne ha object
-      "until": sum} );
+      "result": sum} );
 
   } else if ( action === 'factor' ) {
     let factor = 1;
@@ -60,7 +60,7 @@ app.post( '/dountil/:action', ( req, res ) => { //ez az egesz nem mukodik //ez m
       factor = i * factor;
     }
     res.json( {
-      "until": Number( factor )
+      "result": Number( factor )
     } )
   }
 } );
