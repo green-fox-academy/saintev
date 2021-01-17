@@ -73,8 +73,8 @@ app.get( '/allbookinfo', ( req, res ) => {
   let pgt = 0;
   if ( req.query.pgt ) {
     pgt = req.query.pgt;
-    if ( req.query.category || req.query.publisher || req.query.pgt ) {
-    mainQuery += ` AND book_price > (?)` // this will change to database error if publisher is added on top of category
+    if ( req.query.category || req.query.publisher || req.query.plt ) {
+    mainQuery += ` AND book_price > (?)` 
     } else {
     mainQuery += ` WHERE book_price > (?)`
     }
