@@ -24,11 +24,9 @@ const mapWith = (array, callback) => {
 console.log(mapWith([1, 2, 3], addOne));
 //expected result: [2, 3, 4]
 
+
 // Exercise 2:
-
 // Create a callback function which removes every second character from a string
-
-
 
 const words = ['map', 'reduce', 'filter'];
 
