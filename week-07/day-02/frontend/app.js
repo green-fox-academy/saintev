@@ -39,7 +39,7 @@ app.get( '/appenda/:word', ( req, res ) => {
   res.json( { "appended": `${ req.params.word }a` } );
   } );
 
-app.post( '/dountil/:action', ( req, res ) => { //ez az egesz nem mukodik 
+app.post( '/dountil/:action', ( req, res ) => {  
   let action = req.params.action;
   let number = req.body.until;
 
