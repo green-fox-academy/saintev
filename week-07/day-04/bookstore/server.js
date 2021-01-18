@@ -38,47 +38,39 @@ app.get( '/allbookinfo', ( req, res ) => {
  JOIN author ON book_mast.aut_id = author.aut_id 
  JOIN category ON book_mast.cate_id = category.cate_id
  JOIN publisher ON book_mast.pub_id = publisher.pub_id`
+  
   let searchWords = [];
   
-  let bookCategory = ' '
   if ( req.query.category ) {
-    bookCategory = req.query.category;
-    console.log( bookCategory );
     mainQuery += ` WHERE cate_descrip = (?)`
-    searchWords.push( bookCategory );
+    searchWords.push( req.query.category );
   };
 
-  let bookPublisher = ' '; 
   if ( req.query.publisher ) {
-    bookPublisher = req.query.publisher;
     if ( req.query.category && req.query.publisher ) {
     mainQuery += ` AND pub_name = (?)`
     } else {
     mainQuery += ` WHERE pub_name = (?)`
     }
-    searchWords.push( bookPublisher );
+    searchWords.push( req.query.publisher );
   }
   
-  let plt = 2000;
   if ( req.query.plt ) {
-    plt = req.query.plt;
     if ( req.query.category || req.query.publisher ) {
     mainQuery += ` AND book_price < (?)`
     } else {
     mainQuery += ` WHERE book_price < (?)`
     }
-    searchWords.push(plt)
+    searchWords.push(req.query.plt)
   }
     
-  let pgt = 0;
   if ( req.query.pgt ) {
-    pgt = req.query.pgt;
     if ( req.query.category || req.query.publisher || req.query.plt ) {
     mainQuery += ` AND book_price > (?)` 
     } else {
     mainQuery += ` WHERE book_price > (?)`
     }
-    searchWords.push( pgt );
+    searchWords.push( req.query.pgt );
   }
    
    conn.query( mainQuery , searchWords , ( err, rows ) => { 
