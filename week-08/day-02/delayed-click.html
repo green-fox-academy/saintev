@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Click me!</button>
+  
+  <script>
+  //Create a simple HTML document with one button. 
+  //If the user clicks the button it should wait 2 seconds and it should show a text under the button:
+  // 2 seconds elapsed
+  
+  let button = document.querySelector('button');
+  let body = document.querySelector('body');
+  
+
+  button.addEventListener('click', (event) => {
+    setTimeout(()=>{                                  ///setTimeout(function callback (){
+    let newParagraph = document.createElement('p');
+    newParagraph.innerHTML = '2 seconds elapsed';
+    body.appendChild(newParagraph);
+    } , 2000)
+    });
+
+
+    
+    
+  
+
+  
+  
+  
+  
+  </script>
+</body>
+</html>
