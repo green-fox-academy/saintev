@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Click me!</button>
+
+
+  <script>
+    //Create a simple HTML document with one button.
+    //If the user clicks the button 3 times, and 5 seconds is already elapsed since the page is loaded, 
+    //a text should appear under the button: 5 seconds elapsed and clicked 3 times
+    //If the user starts clicking before the first 5 seconds, nothing should be printed
+
+    let button = document.querySelector('button');
+    let body = document.querySelector('body');
+    let count = 0;
+
+    
+    window.onload = function() { // only starts counting clicks after 5 seconds
+      setTimeout(() => {
+        button.addEventListener('click', (event) => {
+        count++;
+        console.log(count);
+
+        if(count > 2) {
+        let newParagraph = document.createElement('p');
+        newParagraph.innerHTML = '5 seconds elapsed and clicked 3 times'
+        body.appendChild(newParagraph);
+        button.setAttribute('disabled', true);
+        return;
+        } 
+        });
+      }, 5000);
+    }
+
+    
+  //}
+  
+ </script>
+</body>
+</html>
+
+
