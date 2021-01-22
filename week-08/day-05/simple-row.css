@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*height: 100vh;*/
+}
+
+#content {
+  
+  background-color:rgb(199, 78, 199);
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  margin: auto;
+  grid-template-rows: 200px;
+  grid-column-gap: 10px;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.elements{
+  background-color: beige;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.yellow{
+  background-color: rgb(241, 200, 85);
+}
+
+.green{
+  background-color: rgb(27, 218, 27);
+}
