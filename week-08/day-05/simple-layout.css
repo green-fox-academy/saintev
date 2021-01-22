@@ -7,7 +7,7 @@
   display: grid;
   width: 90%;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows:90% 10%;
+  grid-template-rows: 85% 15%;
   margin: auto;
   grid-gap: 5px;
   height: 500px;
@@ -24,8 +24,8 @@ header{
 
 a{
   background-color: cyan;
-  width: auto;
-  height: auto;
+  /*width: auto;
+  height: auto;*/
   margin: auto 10px;
   padding:3px;
 }
