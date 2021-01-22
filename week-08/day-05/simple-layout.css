@@ -1,0 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  display: grid;
+  width: 90%;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows:90% 10%;
+  margin: auto;
+  grid-gap: 5px;
+  height: 500px;
+}
+
+header{
+  display: flex;
+  width: auto;
+  height: 80px;
+  background-color: purple;
+  align-content: center;
+  justify-content: left;
+}
+
+a{
+  background-color: cyan;
+  width: auto;
+  height: auto;
+  margin: auto 10px;
+  padding:3px;
+}
+
+.main{
+  background-color: rgb(241, 241, 8);
+  grid-column: 2/3;
+}
+
+.sidebar{
+  background-color: rgb(15, 214, 15);
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+footer{
+  background-color: rgb(175, 163, 163);
+  grid-column: 1/3;
+}
