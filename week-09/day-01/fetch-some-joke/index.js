@@ -34,11 +34,6 @@ function addJokeToList ( joke ) {
   jokeList.appendChild(newJoke)
 }
 
- //.then(response => response.json())
- // .then(responseObjecttoJson => {
- //   let newP = document.createElement('p');
- //   newP.innerText = responseObjecttoJson.value.joke;
- //   container.appendChild(newP);
- // })
+ 
 
 
