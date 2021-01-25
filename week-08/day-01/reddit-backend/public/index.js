@@ -2,7 +2,7 @@ window.onload = () => {
   let linkRequest = new XMLHttpRequest(); //hasznalja ezt az adatbazist
   linkRequest.onreadystatechange = handleReadyStateChange;
   
-  linkRequest.open( 'GET', 'http://localhost:3000/posts', false ); //a server.js kap egy lekerest erre az endpointra akkor 
+  linkRequest.open( 'GET', 'http://localhost:3000/posts' ); //a server.js kap egy lekerest erre az endpointra akkor 
   //megnyitja ezt a csatornat
   linkRequest.send(); // ezzel megy el az adat valojaban, ezzel kuldjuk el a lekerest
 

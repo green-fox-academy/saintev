@@ -39,7 +39,7 @@ app.get( '/posts', ( req, res ) => {
 
 app.post( '/posts', ( req, res ) => {
   conn.query( `INSERT INTO posts (title,url)
-  VALUES(?,?)`, [ req.body.title, req.body.url ], ( err ) => {
+  VALUES(?,?)`, [ req.body.title, req.body.url ], ( err, rows ) => {
     if ( err ) {
       console.log( err.toString() );
       res.status( 500 ).json( { 'error': 'database error' } );
@@ -47,8 +47,8 @@ app.post( '/posts', ( req, res ) => {
     }
     if ( req.body.title && req.body.url ) {
       //res.send( 'Ok!post added!' );
-      //res.json( rows );
-      res.redirect( '/' );
+      res.json( rows );
+      //res.redirect( '/' );
     } else
         res.send('Please provide a title and a valid url!')
       return;
