@@ -23,7 +23,7 @@ window.onload = () => {
 const linkList = document.querySelector( 'ul' );
 const addLinkToList = ( link ) => {
   const row = document.createElement ('li' );
-  row.innerHTML = `id: ${link.id} : <strong>${ link.title }:</strong> ${ link.url }`;
+  row.innerHTML = `id: ${link.id} : <strong>${ link.title }:</strong> ${ link.url } <strong> score: ${link.score}`;
   linkList.appendChild( row );
   console.log(row);
 }

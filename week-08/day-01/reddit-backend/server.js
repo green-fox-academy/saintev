@@ -46,9 +46,10 @@ app.post( '/posts', ( req, res ) => {
       return;
     }
     if ( req.body.title && req.body.url ) {
-      //res.send( 'Ok!post added!' );
-      res.json( rows );
-      //res.redirect( '/' );
+      conn.query( 'SELECT * FROM posts WHERE id = (?)', [ rows.insertId ], (err,rows)=> {
+        res.json( rows ); // if we want to return a json
+      } )
+        //res.redirect( '/' );
     } else
         res.send('Please provide a title and a valid url!')
       return;
@@ -56,19 +57,19 @@ app.post( '/posts', ( req, res ) => {
 } );
 
 app.put( '/posts/:id/upvote', ( req, res ) => {
-  conn.query( `UPDATE posts SET score = score + 1 WHERE id = ${ req.params.id }`, ( err ) => {
+  conn.query( `UPDATE posts SET score = score + 1 WHERE id = (?)`, [ req.params.id]  ,( err )=> {
     if ( err ) {
-      console.log( err.toString() );
-      res.status( 500 ).json( { 'error': 'database error' } );
-      return;
-    }
-    res.status( 200 ).json( 'ok' );
-    //res.redirect('/');
-  } );
+        console.log( err.toString() );
+        res.status( 500 ).json( { 'error': 'database error' } );
+        return;
+      }
+      res.status( 200 ).json( 'ok' );
+      //res.redirect('/');
+    } );
 } );
 
 app.put( '/posts/:id/downvote', ( req, res ) => {
-  conn.query( `UPDATE posts SET score = score - 1 WHERE id = ${ req.params.id }`, ( err ) => {
+  conn.query( `UPDATE posts SET score = score - 1 WHERE id = (?)` ,[ req.params.id ], ( err ) => {
     if ( err ) {
       console.log( err.toString() );
       res.status( 500 ).json( { 'error': 'database error' } );
@@ -79,7 +80,7 @@ app.put( '/posts/:id/downvote', ( req, res ) => {
 } );
 
 app.delete( '/posts/:id', ( req, res ) => {
-  conn.query( `DELETE FROM posts WHERE id = ${ req.params.id }`, ( err ) => {
+  conn.query( `DELETE FROM posts WHERE id = (?)`, [ req.params.id ], ( err ) => {
     if ( err ) {
       console.log( err.toString() );
       res.status( 500 ).json( { 'error': 'database error' } );
@@ -91,7 +92,7 @@ app.delete( '/posts/:id', ( req, res ) => {
 } );
 
 app.put( '/posts/:id', ( req, res ) => {
-  conn.query( `UPDATE posts SET title = '${req.body.title}', url = '${req.body.url}' WHERE id = ${ req.params.id }`, ( err, rows ) => {
+  conn.query( `UPDATE posts SET title = (?), url = (?) WHERE id = (?)`, [req.body.title, req.body.url, req.params.id], ( err, rows ) => {
     if ( err ) {
       console.log( err.toString() );
       res.status( 500 ).json( { 'error': 'database error' } );
