@@ -13,17 +13,17 @@ promise()
   } )
   
 
-  var promise = new Promise(function (fulfill, reject) {
-    setTimeout( () => reject( 'REJECTED!' ), 300 );
-    })
-
-    .catch( ( reject ) => {
-      onReject(reject)
-    } )
-  
-    function onReject (error) {
-      console.log(error);
-    }
+//  var promise = new Promise(function (fulfill, reject) {
+//    setTimeout( () => reject( 'REJECTED!' ), 300 );
+//    })
+//
+//    .catch( ( reject ) => {
+//      onReject(reject)
+//    } )
+//  
+//    function onReject (error) {
+//      console.log(error);
+//    }
 
 
     
