@@ -33,7 +33,3 @@ function addJokeToList ( joke ) {
   newJoke.innerHTML = `${ joke }`;
   jokeList.appendChild(newJoke)
 }
-
- 
-
-
