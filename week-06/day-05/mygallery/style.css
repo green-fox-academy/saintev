@@ -43,7 +43,12 @@
   align-content: center;
   flex-direction: column;
   overflow: hidden;
-  /*need to figure out how to show the center of the image not the top*/
+  
+  
+}
+#bigpicture{
+  margin-top: -70px; /*the middle of the image will be shown*/
+
 }
 
  .transbox {
