@@ -18,7 +18,7 @@ button.addEventListener( 'click', ( event ) => {
     return response; //megkapjuk a response Objectet
   } )
   .then( response => response.json() )
-    .then( response => ( response.value.joke ) )
+  .then( response => ( response.value.joke ) )
   .then( response => addJokeToList( response )  )
   
   .catch( err => {
