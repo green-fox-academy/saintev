@@ -21,6 +21,11 @@ conn.connect((err) => {
   console.log('Connected to mysql')
 } );
 
+app.get( '/', ( req, res ) => {
+  res.sendFile( __dirname + 'index.html' );
+  //res.sendFile(path.join('index.html'));
+})
+  
 app.get( '/hello', ( req,res ) => {
   res.send(`Hello World!`);
   //res.sendFile('index.html')
@@ -38,6 +43,7 @@ app.get( '/posts', ( req, res ) => {
 } );
 
 app.post( '/posts', ( req, res ) => {
+  res.sendFile( __dirname, + 'post.html' );
   conn.query( `INSERT INTO posts (title,url)
   VALUES(?,?)`, [ req.body.title, req.body.url ], ( err, rows ) => {
     if ( err ) {
