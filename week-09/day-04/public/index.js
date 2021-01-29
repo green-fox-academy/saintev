@@ -75,22 +75,22 @@ postButton.addEventListener( 'click', ( event )=> {
   window.location.assign( 'http://localhost:3000/addpost' ) 
 } );
   
-//post.html 
-//const form = document.querySelector( '#myForm' );
-//form.addEventListener( 'submit', ( event ) => {
-//  event.preventDefault();
-//      
-//  fetch( 'http://localhost:3000/posts', {
-//    method: 'POST',
-//    headers: {
-//      'Content-Type': 'application/json'
-//    },
-//    body: JSON.stringify( {
-//      title: form.title.value,
-//      url: form.url.value
-//      } )
-//  } )
-//} );
+post.html 
+const form = document.querySelector( '#myForm' );
+form.addEventListener( 'submit', ( event ) => {
+  event.preventDefault();
+      
+  fetch( 'http://localhost:3000/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify( {
+      title: form.title.value,
+      url: form.url.value
+      } )
+  } )
+} );
 
 const remove = document.createElement( 'button' );
 remove.addEventListener( 'click', ( event ) => {
