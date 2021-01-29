@@ -60,6 +60,7 @@ function addPost ( post ) {
   change.appendChild( modify );
   const remove = document.createElement( 'button' );
   remove.setAttribute( 'class', 'remove' )
+  remove.setAttribute('id', `${post.id}`)
   remove.innerHTML = 'Remove';
   change.appendChild( remove );
   li.appendChild( change );
@@ -70,12 +71,40 @@ function addPost ( post ) {
 
 //navigate to post site
 const postButton = document.querySelector( '.submit' );
-postButton.addEventListener( 'click', ( event => {
-  location.href( 'http://localhost:3000/posts' );//???
-} ) )
+postButton.addEventListener( 'click', ( event )=> {
+  window.location.assign( 'http://localhost:3000/addpost' ) 
+} );
+  
+//post.html 
+//const form = document.querySelector( '#myForm' );
+//form.addEventListener( 'submit', ( event ) => {
+//  event.preventDefault();
+//      
+//  fetch( 'http://localhost:3000/posts', {
+//    method: 'POST',
+//    headers: {
+//      'Content-Type': 'application/json'
+//    },
+//    body: JSON.stringify( {
+//      title: form.title.value,
+//      url: form.url.value
+//      } )
+//  } )
+//} );
 
-//post.html
-const button = document.querySelector( 'button' );
-button.addEventListener( 'click', ( event ) => {
-  fetch
-} )
+const remove = document.createElement( 'button' );
+remove.addEventListener( 'click', ( event ) => {
+  const removeId = document.querySelector( '#id' );
+  console.log(removeId);
+    fetch( `http://localhost:3000/posts/${removeId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify( {
+        id: removeId
+      })
+    } )
+  
+})
+ 

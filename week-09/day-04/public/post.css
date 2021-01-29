@@ -65,7 +65,7 @@ button{
   font-size: 12px;
   padding: 5px;
   width: 30%;
-  border: 1px solid blue;
+  border: 2px solid rgb(245,231,32);
 }
 
 .links{

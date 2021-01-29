@@ -12,7 +12,7 @@ const conn = mysql.createConnection( {
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'reddit',
+  database: 'ocean',
   insecureAuth: 'true',
 } );
 
@@ -31,6 +31,10 @@ app.get( '/hello', ( req,res ) => {
   //res.sendFile('index.html')
 } );
 
+app.get( '/addpost', ( req, res ) => {
+  res.sendFile( __dirname + '/public/post.html' );
+} )
+
 app.get( '/posts', ( req, res ) => {
   conn.query( 'SELECT * FROM posts;', ( err, rows ) => {
     if ( err ) {
@@ -43,7 +47,7 @@ app.get( '/posts', ( req, res ) => {
 } );
 
 app.post( '/posts', ( req, res ) => {
-  res.sendFile( __dirname, + 'post.html' );
+  
   conn.query( `INSERT INTO posts (title,url)
   VALUES(?,?)`, [ req.body.title, req.body.url ], ( err, rows ) => {
     if ( err ) {
@@ -52,10 +56,9 @@ app.post( '/posts', ( req, res ) => {
       return;
     }
     if ( req.body.title && req.body.url ) {
-      conn.query( 'SELECT * FROM posts WHERE id = (?)', [ rows.insertId ], (err,rows)=> {
-        res.json( rows ); // if we want to return a json
-      } )
-        //res.redirect( '/' );
+      ///conn.query( 'SELECT * FROM posts WHERE id = (?)', [ rows.insertId ], (err,rows)=> {
+        res.redirect( '/' );
+      //} )
     } else
         res.send('Please provide a title and a valid url!')
       return;
@@ -92,8 +95,7 @@ app.delete( '/posts/:id', ( req, res ) => {
       res.status( 500 ).json( { 'error': 'database error' } );
       return;
     }
-    //res.status( 200 ).json(rows); // nem tudom milyen rowst ad vissza
-    res.status( 200 ).json( 'ok, deleted!' )
+    res.status( 200 ).redirect( '/' );
   } );
 } );
 
