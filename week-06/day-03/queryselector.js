@@ -18,11 +18,13 @@ const businessLamp2 = document.querySelectorAll( '.big' );
 console.log(businessLamp2);
 
 // 3. store 'The King' and 'The Conceited Man' in the 'conceitedKing' variable alert them one by one.
-const conceitedKing = document.getElementsByClassName( 'container' );
+const conceitedKing = document.getElementsByClassName('container');
+console.log(conceitedKing);
 console.log( conceitedKing[ 0 ].children[ 0 ] );
 console.log( conceitedKing[ 0 ].children[ 1 ] );
 
-const conceitedKing2 = document.querySelector( '.container' );
+const conceitedKing2 = document.querySelector('.container');
+console.log(conceitedKing);
 console.log(conceitedKing2.children[0]);
 console.log(conceitedKing2.children[1]);
 
