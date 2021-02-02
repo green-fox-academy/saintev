@@ -49,8 +49,8 @@ function addPost ( post ) {
   li.appendChild( title );
 
   const timestamp = document.createElement( 'div' )
-  timestamp.setAttribute( 'class', 'timestamp' )
-  timestamp.innerHTML = `${ post.timestamp }`
+  timestamp.setAttribute('class', 'timestamp')
+  timestamp.innerHTML = `${post.TIMESTAMPDIFF(HOUR,TIMESTAMP,NOW())}`
   li.appendChild( timestamp );
 
   const change = document.createElement( 'div' );

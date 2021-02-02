@@ -35,7 +35,7 @@ app.get( '/addpost', ( req, res ) => {
 } )
 
 app.get( '/posts', ( req, res ) => {
-  conn.query( 'SELECT * FROM posts ORDER BY timestamp DESC;', ( err, rows ) => {
+  conn.query( 'SELECT *, TIMESTAMPDIFF(HOUR,TIMESTAMP,NOW()) FROM posts ORDER BY timestamp DESC;', ( err, rows ) => {
     if ( err ) {
       console.log( err.toString() );
       res.status( 500 ).json( { 'error': 'database error' } );
