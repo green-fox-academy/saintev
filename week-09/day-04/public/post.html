@@ -20,7 +20,7 @@
 
 <body>
   
-  <form id='myForm' action='/posts' method='post'>
+  <form id='myForm' action='/posts' method='post'><!--Ha a <form> html elemen van action és method része akkor a form maga is elküldi az adatokat, event listener nélkül a fetch automatikusan lefut amikor betölti a JS fájlt-->
     <label for='title'>title</label>
     <input type='text' id='title' name='title' required autocomplete="off">
     
@@ -29,9 +29,7 @@
         
     <button type='submit'>Submit</button>
   </form>
-  
 
-
-  <script src='index.js'></script>
+  <script src='post.js'></script>
 </body>
 </html>

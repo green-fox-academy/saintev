@@ -1,7 +1,7 @@
 'use strict';
 
-window.onload = () =>{
-
+window.onload = () => {
+  
   fetch( 'http://localhost:3000/posts' )
     .then( response => {
       if ( response.status !== 200 ) {
@@ -9,8 +9,8 @@ window.onload = () =>{
       }
       return response
     } )
-    .then( response => response.json() )
-    .then( response => response.forEach( post => { addPost( post ) }))
+    .then(response => response.json())
+    .then(response => response.forEach( post => { addPost( post ) }))
     
     //.catch( err => {
     //  console.log('something went wrong');
@@ -22,13 +22,14 @@ window.onload = () =>{
 function addPost ( post ) {
   const ul = document.querySelector( 'ul' );
 
-  const li = document.createElement( 'li' );
+  const li = document.createElement('li');
 
   const vote = document.createElement( 'div' );
   vote.setAttribute( 'class', 'vote' );
 
   const thumbsup = document.createElement( 'i' )
   thumbsup.classList.add( 'far', 'fa-thumbs-up' )//?
+  thumbsup.setAttribute('id', `${ post.id }`);
   vote.appendChild( thumbsup );
 
   const score = document.createElement( 'div' )
@@ -38,7 +39,8 @@ function addPost ( post ) {
 
   const thumbsdown = document.createElement( 'i' )
   thumbsdown.setAttribute( 'class', 'far fa-thumbs-down' )
-  vote.appendChild( thumbsdown );
+  thumbsdown.setAttribute('id', `${ post.id }`);
+  vote.appendChild(thumbsdown);
 
   const title = document.createElement( 'a' );
   title.setAttribute( 'href', `${ post.url }` );
@@ -59,6 +61,7 @@ function addPost ( post ) {
   modify.innerHTML = 'Modify';
   change.appendChild( modify );
   const remove = document.createElement( 'button' );
+  remove.setAttribute('type','submit')
   remove.setAttribute( 'class', 'remove' )
   remove.setAttribute('id', `${post.id}`)
   remove.innerHTML = 'Remove';
@@ -72,39 +75,53 @@ function addPost ( post ) {
 //navigate to post site
 const postButton = document.querySelector( '.submit' );
 postButton.addEventListener( 'click', ( event )=> {
-  window.location.assign( 'http://localhost:3000/addpost' ) 
+  window.location.assign( 'http://localhost:3000/addpost' ) //redirect 
 } );
   
-post.html 
-const form = document.querySelector( '#myForm' );
-form.addEventListener( 'submit', ( event ) => {
-  event.preventDefault();
-      
-  fetch( 'http://localhost:3000/posts', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify( {
-      title: form.title.value,
-      url: form.url.value
-      } )
-  } )
-} );
 
-const remove = document.createElement( 'button' );
-remove.addEventListener( 'click', ( event ) => {
-  const removeId = document.querySelector( '#id' );
-  console.log(removeId);
-    fetch( `http://localhost:3000/posts/${removeId}`, {
+//delete, upvote, downvote
+const posts = document.getElementById(`posts`);
+
+posts.addEventListener('click', (event) => {
+  const id = event.target.getAttribute('id');
+  const action = event.target.getAttribute('class');
+  console.log(action);
+  
+  if (action === 'remove') {
+    const removeButton = document.getElementById(`${ id }`);
+    fetch(`http://localhost:3000/posts/${ id }`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify( {
-        id: removeId
-      })
-    } )
+    })
+    const change = removeButton.parentElement;
+    const li = change.parentElement;
+    posts.removeChild(li);
+
+  } else if (action === 'far fa-thumbs-up') {
+    const score = event.target.nextSibling;
+    console.log(score);
+    fetch(`http://localhost:3000/posts/${ id }/upvote`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    score.innerHTML++;
   
-})
+  } else if (action === 'far fa-thumbs-down') {
+    const score = event.target.previousSibling;
+    console.log(score);
+    fetch(`http://localhost:3000/posts/${ id }/downvote`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json'
+      },
+    })
+    score.innerHTML--;
+  }
+});
+
+
  
