@@ -1,0 +1,53 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: rgb(33, 169, 248);
+  margin: 30px;
+}
+table{
+  margin: auto;
+  width: 50%;
+  height: 500px;
+  border-collapse: collapse;
+  border-style: hidden;
+  margin: auto;
+  background-color: #cfcaca;
+}
+
+td,th{
+  padding: 10px;
+  text-align: left;
+  width: 50%;
+  border: 2px solid #cfcaca;
+}
+
+thead tr{
+  border-bottom: 4px solid #cfcaca;
+}
+
+th{
+  padding: 30px 10px;
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid#afadad;
+}
+
+tr:nth-child(2n+1) {
+  background-color:white;
+}
+
+tr:nth-child(2n){
+  background-color: rgb(232, 232, 232);
+}
+
+td[data-currency]:before{
+  content:'$ ';
+}
+
+td{
+  width: auto;
+  min-width: 50px;
+}
