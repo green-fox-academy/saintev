@@ -19,7 +19,7 @@ app.get( '/doubling', ( req, res ) => {
   if ( input === undefined ) {
     res.status( 200 ).json( { "error": "Please provide an input!" } );
   } else {
-    res.json( { "received": Number( req.query.input ), "result": Number( req.query.input * 2 ) } )
+    res.json( { "received": Number( req.query.input ), "result": Number( req.query.input * 2 ) } ) //Number converts the object's value 
   }
 } );
 

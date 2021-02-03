@@ -50,7 +50,21 @@ function addPost ( post ) {
 
   const timestamp = document.createElement( 'div' )
   timestamp.setAttribute('class', 'timestamp')
-  timestamp.innerHTML = `${post.TIMESTAMPDIFF(HOUR,TIMESTAMP,NOW())}`
+  const timeElapsed = post.result;
+  let days = Math.floor(timeElapsed / 24);
+  let hours = timeElapsed % 24;
+  if (days === 0) {
+    if (hours === 1) {
+    timestamp.innerHTML=`Posted 1 hour ago`
+    }
+  timestamp.innerHTML=`Posted ${hours} hours ago`  
+  } else {
+    if (days === 1) {
+    timestamp.innerHTML=`Posted 1 day ago`
+    } else {
+  timestamp.innerHTML=`Posted ${days} days ago` 
+    }
+  }
   li.appendChild( timestamp );
 
   const change = document.createElement( 'div' );
