@@ -41,6 +41,7 @@ app.post('/api/links', (req, res) => {
           return;
         }
         conn.query(`SELECT * FROM aliases WHERE alias = (?)`, [ req.body.alias ], (err, rows) => {
+          
           if (err) {
           console.log(err.toString());
           res.status(500).json({ 'error': 'database error' });

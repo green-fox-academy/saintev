@@ -24,7 +24,7 @@ form.addEventListener('submit', (event) => {
       } return response;
     })
     .then(response => response.json())
-    .then(response => response[0].secretCode)
+    .then(response => response[0].secredCode)
     .then(response => writeMyMessage(response))
     //.then(response => console.log(response))
     .catch((err) => {
