@@ -8,11 +8,14 @@
     body {
       background-color: magenta;
     }
+    span{
+      color: red;
+    }
    </style>
 </head>
 <body>
   <main>
-    <form>
+    <form class="form">
       <label for="url">url</label>
       <input type="text" id="url" name="url" required autocomplete="off">
       
@@ -21,6 +24,7 @@
           
       <button type="submit">Submit</button>
     </form>
+    <div class="message"></div>
     </main>
   <script src="index.js"></script>
 </body>

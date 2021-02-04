@@ -55,6 +55,63 @@ app.post('/api/links', (req, res) => {
   })
 })
 
+app.get('/a/:alias', (req, res) => {
+  conn.query(`UPDATE aliases SET hitCount = hitCount + 1 WHERE alias =(?)`,[req.params.alias], (err, rows) => {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).json({ 'error': 'database error' });
+      return;
+    }
+    if (rows.affectedRows === 0) {
+      res.status(404);
+    } else {
+    conn.query(`SELECT url FROM aliases WHERE alias = (?) `, [ req.params.alias ], (err, rows) => {
+      if (err) {
+        console.log(err.toString());
+        res.status(500).json({ 'error': 'database error' });
+        return;
+      }
+      res.redirect(`${rows[0].url}`)
+    });
+    }
+  })
+})
+
+app.get('/api/links', (req, res) => {
+  conn.query(`SELECT id,url,alias,hitCount FROM aliases`, (err, rows) => {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).json({ 'error': 'database error' });
+      return;
+    }
+    res.json(rows)
+  })
+})
+
+app.delete('/api/links/:id', (req, res) => {
+  conn.query(`SELECT * FROM aliases WHERE id = (?)`, [ req.params.id ], (err,rows)=> {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).json({ 'error': 'database error' });
+      return;
+    }
+    if (rows.length === 0){
+      res.status(404).send('no such id')
+    } else if (rows[ 0 ].secretCode !== req.body.secretCode) {
+      res.status(403).send('does not match')
+    } else {
+      conn.query(`DELETE FROM aliases WHERE id = (?)`, [ req.params.id ], (err, rows) => {
+        if (err) {
+          console.log(err.toString());
+          res.status(500).json({ 'error': 'database error' });
+          return;
+        }
+        res.status(204).send('ok')
+      })
+    }
+  })
+})
+
 app.listen(PORT, () => {
   console.log('Listening to port 3000');
 });
