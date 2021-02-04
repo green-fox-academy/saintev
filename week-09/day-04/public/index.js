@@ -2,22 +2,22 @@
 
 window.onload = () => {
   
-  fetch( 'http://localhost:3000/posts' )
-    .then( response => {
-      if ( response.status !== 200 ) {
-        throw new Error( 'no response' )
+  fetch('http://localhost:3000/posts')
+    .then(response => {
+      if (response.status !== 200) {
+        throw new Error('no response')
       }
       return response
-    } )
+    })
     .then(response => response.json())
-    .then(response => response.forEach( post => { addPost( post ) }))
+    .then(response => response.forEach(post => { addPost(post) }))
     
     //.catch( err => {
     //  console.log('something went wrong');
     //} )
 
-    .finally( console.log( 'end' ) );
-};
+    .finally(console.log('end'));
+  };
 
 function addPost ( post ) {
   const ul = document.querySelector( 'ul' );
