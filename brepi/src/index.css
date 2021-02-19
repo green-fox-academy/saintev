@@ -1,0 +1,34 @@
+*{
+  margin:auto;
+}
+
+.App h1{
+  margin: 30px auto 10px auto;
+  text-align: center;
+}
+.beer-list {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  padding: 10px 10px;
+  border-bottom: 1px solid #fafafa;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+}
+.beer-preview{
+  width: 300px;
+}
+.beer-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  background-color: rgb(225, 193, 247);
+}
+.beer-preview h2 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.ant-pagination {
+  text-align: center;
+}
+
