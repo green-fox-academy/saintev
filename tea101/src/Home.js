@@ -2,11 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 
-  const title = 'Delicious Delights'
-  
-  const handleClick = () => {
-
-  }
+  const title = 'Delicious Delights';
 
   return ( 
     <div className="homepage">
